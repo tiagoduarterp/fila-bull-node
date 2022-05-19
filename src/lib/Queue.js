@@ -6,12 +6,6 @@ const redisConfig = {
   port: process.env.REDIS_PORT,
 }
 
-
-//import * as jobs from '../jobs';
-
-// const RegistrationMail = require('../jobs').RegistrationMail
-// const UserReport = require('../jobs').UserReport
-
 const jobs = require('../jobs');
 
 const queues = Object.values(jobs).map(job => ({

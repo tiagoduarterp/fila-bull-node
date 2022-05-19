@@ -1,8 +1,6 @@
 //import Mail from '../lib/Mail';
 const Mail = require("../mail/mail");
 
-// cod, tipo,
-
 module.exports = {
   key: 'RegistrationMail',
   async handle({ data }) {
