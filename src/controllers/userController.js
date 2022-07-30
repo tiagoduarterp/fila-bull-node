@@ -7,6 +7,7 @@ const Mail = require("../mail/mail");
 class oUser{
     constructor(){ }
    async user(req, res, next){
+      // console.log('Teste no user ', req)
         const {name, email, password} = req.body;
 
         const user = {
@@ -25,7 +26,12 @@ class oUser{
 
         await Queue.add('UserReport', { user });
 
-        return res.json(user);
+       // return res.json(user);
+
+        res.status(200).send({
+            message:'Cadastro enviado',
+            dados:user,
+        })
     
       }
 

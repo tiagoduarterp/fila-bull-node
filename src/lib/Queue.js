@@ -21,9 +21,12 @@ const queues = Object.values(jobs).map(job => ({
   options: job.options,
 }))
 
+//console.log('Teste do ', queues)
+
 module.exports = {
   queues,
   add(name, data) {
+    console.log('teste ', this.queues)
     const queue = this.queues.find(queue => queue.name === name);
     
     return queue.bull.add(data, queue.options);
